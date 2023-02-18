@@ -27,3 +27,11 @@ function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
 }
+
+navigator.geolocation.getCurrentPosition(function(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    // Use the latitude and longitude to display the user's location on a map
+}, function(error) {
+    console.log(error);
+});
